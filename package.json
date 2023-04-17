@@ -1,0 +1,20 @@
+{
+  "name": "nba-search-main",
+  "version": "1.0.0",
+  "description": "Create a simple but fully functional application that allows users to search for an NBA MVP player by year or by name. This assignment requires both client and server code.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
