@@ -1,5 +1,6 @@
 const express = require("express")
 const mvps = require("./mocks/mvps.json")
+const PORT = 8080
 
 const server = express()
 
@@ -13,6 +14,6 @@ server.get("/mvp/:year", (req, res) => {
     res.json(targetYear)
 })
 
-server.listen(8080, ()=> {
-    console.log("The server is running at PORT 8080")
+server.listen(PORT, ()=> {
+    console.log(`The server is running at PORT ${PORT}`)
 })
