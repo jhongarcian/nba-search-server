@@ -1,8 +1,11 @@
 const express = require("express")
+const cors = require("cors");
 const mvps = require("./mocks/mvps.json")
 const PORT = 8080
 
 const server = express()
+
+server.use(cors({origin: 'http://127.0.0.1:5500'}))
 
 server.get("/api/mvps", (req, res) => {
     res.json(mvps)
