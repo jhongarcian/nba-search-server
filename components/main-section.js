@@ -1,3 +1,5 @@
+const URL = "http://localhost:8080/api/mvps"
+
 export const Main = (parentTag) => {
     const main = document.createElement("main")
     main.className = "pb-5"
@@ -21,7 +23,7 @@ export const Main = (parentTag) => {
 const sectionTitle = (parentTag) => {
     const h1 = document.createElement("h1")
     h1.textContent = "Favorite Basketball MVP"
-    h1.className = "pt-5 d-flex justify-content-center"
+    h1.className = "py-5 d-flex justify-content-center"
     parentTag.append(h1)
 
     const divTextContainer = document.createElement("div")
@@ -40,7 +42,7 @@ const sectionTitle = (parentTag) => {
 const sectionTable = (parentTag) => {
     const h2 = document.createElement("h2")
     h2.textContent = "Historical MVPs"
-    h2.className = "d-flex justify-content-center pt-5"
+    h2.className = "d-flex justify-content-center py-5"
     parentTag.append(h2)
 
     const table = document.createElement("table")
@@ -70,3 +72,42 @@ const createTh = (parentTag, text) => {
     parentTag.append(th)
 }
 
+const settings = {
+    url: URL,
+    method: "GET"
+  };
+
+
+const fetchData = async () => {
+    try{
+        const response = await fetch(settings.url, settings)
+        const data = await response.json()
+        createTable(data)
+    } catch(error){
+        console.error(error)
+    }
+}
+fetchData()
+
+const createTable = (data) => {
+    const mvpsList = document.querySelector("#mvps-list")
+
+    data.forEach(item => {
+        const tr = document.createElement("tr")
+        mvpsList.append(tr)
+
+        const th = document.createElement("th")
+        th.scope = "row"
+        th.textContent = item.year 
+        tr.append(th)
+
+        const td1 = document.createElement("td")
+        td1.textContent = item.player
+        tr.append(td1)
+
+        const td2 = document.createElement("td")
+        td2.textContent = item.team
+        tr.append(td2)
+
+    })
+}
