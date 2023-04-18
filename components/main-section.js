@@ -13,7 +13,7 @@ export const Main = (parentTag) => {
     sectionTitle(main)
     
     const table = document.createElement("div")
-    table.className = "px-5"
+    table.className = "container-xxl"
     main.append(table)
 
     sectionTable(table)
@@ -27,7 +27,7 @@ const sectionTitle = (parentTag) => {
     parentTag.append(h1)
 
     const divTextContainer = document.createElement("div")
-    divTextContainer.className = "container-fluid d-flex flex-column gap-3 px-5"
+    divTextContainer.className = "container-xxl d-flex flex-column gap-3 mx-auto"
     parentTag.append(divTextContainer)
 
     const span1 = document.createElement("span")

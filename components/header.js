@@ -6,7 +6,7 @@ export const Header = (app) => {
     app.append(navbar)
 
     const div = document.createElement("div")
-    div.className = "container-fluid"
+    div.className = "container-xxl"
     navbar.append(div)
     
     const logoName = document.createElement("a")
@@ -68,11 +68,13 @@ const createNavList = (parentTag, text) => {
 
 const createSearch = (parentTag) => {
     const form = document.createElement("form")
+    form.id = "form"
     form.className = "d-flex"
     form.setAttribute("role","search")
     parentTag.append(form)
 
     const input = document.createElement("input")
+    input.id = "input"
     input.className = "form-control me-2"
     input.type = "search"
     input.placeholder = "Search"
@@ -80,6 +82,7 @@ const createSearch = (parentTag) => {
     form.append(input)
 
     const button = document.createElement("button")
+    button.id = "button"
     button.className = "btn btn-outline-success"
     button.type = "submit"
     button.textContent = "Search"
