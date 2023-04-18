@@ -24,7 +24,7 @@ server.get("/mvp/:year", (req, res) => {
 
 server.get("/mvp/player/:player", (req, res) => {
     const { player } = req.params;
-    const targetplayer = mvps.filter(mvp => mvp.player === player)
+    const targetplayer = mvps.filter(mvp => mvp.player.toLowerCase().includes(player))
     res.json(targetplayer)
 })
 

@@ -48,22 +48,6 @@ const navList = (parentTag) => {
     const ul = document.createElement("ul")
     ul.className = "navbar-nav nav-underline me-auto mb-2 mb-lg-0"
     parentTag.append(ul)
-
-    createNavList(ul, "Historical MVPs")
-
-    createNavList(ul, "Find Your MVP")
-}
-
-const createNavList = (parentTag, text) => {
-    const historicalLi = document.createElement("li")
-    historicalLi.className = "nav-item"
-    parentTag.append(historicalLi)
-
-    const historicalAnchor = document.createElement("a")
-    historicalAnchor.className = "nav-link"
-    historicalAnchor.href = "#"
-    historicalAnchor.textContent = text
-    historicalLi.append(historicalAnchor)
 }
 
 const createSearch = (parentTag) => {

@@ -14,6 +14,7 @@ export const createModal = (app) => {
 
     const divModalContent = document.createElement("div")
     divModalContent.className = "modal-content"
+    divModalContent.id = "modal-target"
     divModalDialog.append(divModalContent)
 
     const divModalHeader = document.createElement("div")
@@ -28,35 +29,7 @@ export const createModal = (app) => {
 
     const divModalBody = document.createElement("div")
     divModalBody.className = "modal-body d-flex flex-column py-3 align-items-center"
+    divModalBody.id = "modal-body"
     divModalContent.append(divModalBody)
-
-    const spanYear = document.createElement("span")
-    spanYear.className = "py-1"
-    spanYear.textContent = "Year: "
-    divModalBody.append(spanYear)
-
-    const spanYearValue = document.createElement("span")
-    spanYearValue.id = "modal-year"
-    spanYear.append(spanYearValue)
-
-    const spanPlayer = document.createElement("span")
-    spanPlayer.className = "py-1"
-    spanPlayer.textContent = "Player: "
-    divModalBody.append(spanPlayer)
-
-    const spanPlayerValue = document.createElement("span")
-    spanPlayerValue.id = "modal-player"
-    spanPlayer.append(spanPlayerValue)
-
-    const spanTeam = document.createElement("span")
-    spanTeam.className = "py-1"
-    spanTeam.textContent = "Team: "
-    divModalBody.append(spanTeam)
-
-    const spanTeamValue = document.createElement("span")
-    spanTeamValue.id = "modal-team"
-    spanTeam.append(spanTeamValue)
-
-
 
 }
