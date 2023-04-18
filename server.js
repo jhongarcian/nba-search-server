@@ -4,7 +4,7 @@ const mvps = require("./mocks/mvps.json")
 const PORT = 8080
 
 const corsOptions = {
-    origin: 'http://127.0.0.1:5500',
+    origin: ['http://127.0.0.1:5500', "https://jhongarcian.github.io/nba-search-server/"],
     credentials: true
 }
 
