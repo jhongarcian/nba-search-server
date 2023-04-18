@@ -37,6 +37,7 @@ const handleClick = async (e) => {
     e.preventDefault()
     if(e.target.matches("#button")){
         input.value ? setModalContent(modalYear,modalPlayer,modalTeam) : resetModalContent(modalYear,modalPlayer,modalTeam)
+        await fetchPlayer()
     }
 }
 
@@ -97,6 +98,20 @@ async function fetchYear(value) {
                 method: "GET"
             })
         const data = await response.json()
+        return data
+    }catch(error){
+        console.warn(error)
+    }
+}
+
+async function fetchPlayer() {
+    const value = "Nikola"
+    try{
+        const response = await fetch(`http://localhost:8080/mvp/player/${value}`, {
+                method: "GET"
+            })
+        const data = await response.json()
+        console.log(data)
         return data
     }catch(error){
         console.warn(error)

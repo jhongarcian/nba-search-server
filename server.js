@@ -22,6 +22,12 @@ server.get("/mvp/:year", (req, res) => {
     res.json(targetYear)
 })
 
+server.get("/mvp/player/:player", (req, res) => {
+    const { player } = req.params;
+    const targetplayer = mvps.filter(mvp => mvp.player === player)
+    res.json(targetplayer)
+})
+
 server.listen(PORT, ()=> {
     console.log(`The server is running at PORT ${PORT}`)
 })
