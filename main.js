@@ -129,7 +129,7 @@ const handleKeyUp = async (e) => {
 
 async function fetchYear(value) {
     try{
-        const response = await fetch(`https://nba-search-main.onrender.com//mvp/${value}`, {
+        const response = await fetch(`https://nba-search-main.onrender.com/mvp/${value}`, {
                 method: "GET"
             })
         const data = await response.json()
@@ -141,7 +141,7 @@ async function fetchYear(value) {
 
 async function fetchPlayer(value) {
     try{
-        const response = await fetch(`https://nba-search-main.onrender.com//mvp/player/${value}`, {
+        const response = await fetch(`https://nba-search-main.onrender.com/mvp/player/${value}`, {
                 method: "GET"
             })
         const data = await response.json()
