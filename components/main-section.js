@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/api/mvps"
+const URL = "https://nba-search-main.onrender.com/api/mvps"
 
 export const Main = (parentTag) => {
     const main = document.createElement("main")
